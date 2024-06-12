@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 
 import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
 
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Anime Vault",
-  description: "Your favorite anime, all in one place.",
+  title: "Server Actions no Next",
+  description: "Aprendendo server actions no next.",
+  image: "/public/anime.png",
+  type: "website",
 };
 
 export default function RootLayout({
@@ -20,11 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/public/anime.png" />
+      </head>
       <body className={dmSans.className}>
-        <main className="max-w-7xl mx-auto bg-[#0F1117]">
+        <main className="max-w-7xl mx-auto bg-[#141414]">
           <Hero />
           {children}
-          <Footer />
         </main>
       </body>
     </html>
